@@ -201,7 +201,7 @@ class DetailsViewController: UIViewController, TimelineCardDataProvider, Timelin
 					
 					switch(arc4random() % 4) {
 					case 0:
-						let timerView = ORBVisualTimerBar.init(barAnimationStyle: .ORBVisualTimerBarAnimationStyleStraight, frame: CGRect(x: 0, y: itemDescView.bounds.height * 0.4, width: itemDescView.bounds.width * 0.7, height: itemDescView.bounds.height * 0.6), timeRemaining: 5.0)
+						let timerView = ORBVisualTimerBar.init(barAnimationStyle: .init(0), frame: CGRect(x: 0, y: itemDescView.bounds.height * 0.4, width: itemDescView.bounds.width * 0.7, height: itemDescView.bounds.height * 0.6), timeRemaining: 5.0)
 						
 						timerView?.showTimerLabel = false
 						timerView?.backgroundViewColor = .clear
