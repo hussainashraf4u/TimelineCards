@@ -140,7 +140,7 @@ fileprivate class TimelineFeedCell: UITableViewCell {
 	
 	// MARK: Initializers
 	
-	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		initState()
 		
@@ -322,7 +322,8 @@ public class TimelineFeed: UIView, UITableViewDataSource, UITableViewDelegate, T
 	}
 	
 	required public init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        setUpCardsContainer()
 	}
 	
 	private func setUpCardsContainer() {
@@ -330,7 +331,7 @@ public class TimelineFeed: UIView, UITableViewDataSource, UITableViewDelegate, T
 		
 		cardsContainer.frame = bounds
 		cardsContainer.backgroundColor = .clear
-		cardsContainer.rowHeight = UITableViewAutomaticDimension
+		cardsContainer.rowHeight = UITableView.automaticDimension
 		cardsContainer.estimatedRowHeight = frame.height
 		
 		cardsContainer.dataSource = self
